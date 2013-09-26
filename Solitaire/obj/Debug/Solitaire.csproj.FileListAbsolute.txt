@@ -1,0 +1,9 @@
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\bin\Debug\Solitaire.exe.config
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\bin\Debug\Solitaire.exe
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\bin\Debug\Solitaire.pdb
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\obj\Debug\Solitaire.csprojResolveAssemblyReference.cache
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\obj\Debug\Solitaire.Properties.Resources.resources
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\obj\Debug\Solitaire.csproj.GenerateResource.Cache
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\obj\Debug\Solitaire.exe
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\obj\Debug\Solitaire.pdb
+C:\Users\markarranz\Documents\CS39 - C#\Project\Solitaire\Solitaire\obj\Debug\Solitaire.AllAcesSolitaire.resources

@@ -31,24 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllAcesSolitaire));
             this.pbDeck = new System.Windows.Forms.PictureBox();
-            this.pbPosition1 = new System.Windows.Forms.PictureBox();
-            this.pbPosition2 = new System.Windows.Forms.PictureBox();
-            this.pbPosition3 = new System.Windows.Forms.PictureBox();
-            this.pbPosition4 = new System.Windows.Forms.PictureBox();
-            this.pbDiscardPile = new System.Windows.Forms.PictureBox();
+            this.pbStack0 = new System.Windows.Forms.PictureBox();
+            this.pbStack1 = new System.Windows.Forms.PictureBox();
+            this.pbStack2 = new System.Windows.Forms.PictureBox();
+            this.pbStack3 = new System.Windows.Forms.PictureBox();
+            this.pbDiscardStack = new System.Windows.Forms.PictureBox();
             this.imgListOrderedDeck = new System.Windows.Forms.ImageList(this.components);
             this.btnNewGame = new System.Windows.Forms.Button();
             this.imgListCardBack = new System.Windows.Forms.ImageList(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.testBox0 = new System.Windows.Forms.TextBox();
+            this.testBox1 = new System.Windows.Forms.TextBox();
+            this.testBox2 = new System.Windows.Forms.TextBox();
+            this.testBox3 = new System.Windows.Forms.TextBox();
+            this.texsBox4 = new System.Windows.Forms.TextBox();
+            this.testBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPosition1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPosition2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPosition3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPosition4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDiscardPile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStack0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStack1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStack2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStack3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiscardStack)).BeginInit();
             this.SuspendLayout();
             // 
             // pbDeck
@@ -62,55 +64,60 @@
             this.pbDeck.TabStop = false;
             this.pbDeck.Click += new System.EventHandler(this.pbDeck_Click);
             // 
-            // pbPosition1
+            // pbStack0
             // 
-            this.pbPosition1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPosition1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPosition1.Location = new System.Drawing.Point(149, 82);
-            this.pbPosition1.Name = "pbPosition1";
-            this.pbPosition1.Size = new System.Drawing.Size(90, 140);
-            this.pbPosition1.TabIndex = 1;
-            this.pbPosition1.TabStop = false;
+            this.pbStack0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbStack0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbStack0.Location = new System.Drawing.Point(149, 82);
+            this.pbStack0.Name = "pbStack0";
+            this.pbStack0.Size = new System.Drawing.Size(90, 140);
+            this.pbStack0.TabIndex = 1;
+            this.pbStack0.TabStop = false;
+            this.pbStack0.Click += new System.EventHandler(this.pbStack_Click);
             // 
-            // pbPosition2
+            // pbStack1
             // 
-            this.pbPosition2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPosition2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPosition2.Location = new System.Drawing.Point(245, 82);
-            this.pbPosition2.Name = "pbPosition2";
-            this.pbPosition2.Size = new System.Drawing.Size(90, 140);
-            this.pbPosition2.TabIndex = 2;
-            this.pbPosition2.TabStop = false;
+            this.pbStack1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbStack1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbStack1.Location = new System.Drawing.Point(245, 82);
+            this.pbStack1.Name = "pbStack1";
+            this.pbStack1.Size = new System.Drawing.Size(90, 140);
+            this.pbStack1.TabIndex = 2;
+            this.pbStack1.TabStop = false;
+            this.pbStack1.Click += new System.EventHandler(this.pbStack_Click);
             // 
-            // pbPosition3
+            // pbStack2
             // 
-            this.pbPosition3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPosition3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPosition3.Location = new System.Drawing.Point(341, 82);
-            this.pbPosition3.Name = "pbPosition3";
-            this.pbPosition3.Size = new System.Drawing.Size(90, 140);
-            this.pbPosition3.TabIndex = 3;
-            this.pbPosition3.TabStop = false;
+            this.pbStack2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbStack2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbStack2.Location = new System.Drawing.Point(341, 82);
+            this.pbStack2.Name = "pbStack2";
+            this.pbStack2.Size = new System.Drawing.Size(90, 140);
+            this.pbStack2.TabIndex = 3;
+            this.pbStack2.TabStop = false;
+            this.pbStack2.Click += new System.EventHandler(this.pbStack_Click);
             // 
-            // pbPosition4
+            // pbStack3
             // 
-            this.pbPosition4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPosition4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPosition4.Location = new System.Drawing.Point(437, 82);
-            this.pbPosition4.Name = "pbPosition4";
-            this.pbPosition4.Size = new System.Drawing.Size(90, 140);
-            this.pbPosition4.TabIndex = 4;
-            this.pbPosition4.TabStop = false;
+            this.pbStack3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbStack3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbStack3.Location = new System.Drawing.Point(437, 82);
+            this.pbStack3.Name = "pbStack3";
+            this.pbStack3.Size = new System.Drawing.Size(90, 140);
+            this.pbStack3.TabIndex = 4;
+            this.pbStack3.TabStop = false;
+            this.pbStack3.Click += new System.EventHandler(this.pbStack_Click);
             // 
-            // pbDiscardPile
+            // pbDiscardStack
             // 
-            this.pbDiscardPile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbDiscardPile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbDiscardPile.Location = new System.Drawing.Point(574, 233);
-            this.pbDiscardPile.Name = "pbDiscardPile";
-            this.pbDiscardPile.Size = new System.Drawing.Size(90, 140);
-            this.pbDiscardPile.TabIndex = 5;
-            this.pbDiscardPile.TabStop = false;
+            this.pbDiscardStack.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbDiscardStack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbDiscardStack.Location = new System.Drawing.Point(574, 233);
+            this.pbDiscardStack.Name = "pbDiscardStack";
+            this.pbDiscardStack.Size = new System.Drawing.Size(90, 140);
+            this.pbDiscardStack.TabIndex = 5;
+            this.pbDiscardStack.TabStop = false;
+            this.pbDiscardStack.Click += new System.EventHandler(this.pbDiscardPile_Click);
             // 
             // imgListOrderedDeck
             // 
@@ -187,33 +194,47 @@
             this.imgListCardBack.Images.SetKeyName(0, "cardbackBlue.png");
             this.imgListCardBack.Images.SetKeyName(1, "cardbackRed.png");
             // 
-            // textBox1
+            // testBox0
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 233);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(90, 20);
-            this.textBox1.TabIndex = 7;
+            this.testBox0.Location = new System.Drawing.Point(149, 56);
+            this.testBox0.Name = "testBox0";
+            this.testBox0.Size = new System.Drawing.Size(90, 20);
+            this.testBox0.TabIndex = 7;
             // 
-            // textBox2
+            // testBox1
             // 
-            this.textBox2.Location = new System.Drawing.Point(245, 233);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 20);
-            this.textBox2.TabIndex = 8;
+            this.testBox1.Location = new System.Drawing.Point(245, 56);
+            this.testBox1.Name = "testBox1";
+            this.testBox1.Size = new System.Drawing.Size(90, 20);
+            this.testBox1.TabIndex = 8;
             // 
-            // textBox3
+            // testBox2
             // 
-            this.textBox3.Location = new System.Drawing.Point(341, 233);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(90, 20);
-            this.textBox3.TabIndex = 9;
+            this.testBox2.Location = new System.Drawing.Point(341, 56);
+            this.testBox2.Name = "testBox2";
+            this.testBox2.Size = new System.Drawing.Size(90, 20);
+            this.testBox2.TabIndex = 9;
             // 
-            // textBox4
+            // testBox3
             // 
-            this.textBox4.Location = new System.Drawing.Point(437, 233);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(90, 20);
-            this.textBox4.TabIndex = 10;
+            this.testBox3.Location = new System.Drawing.Point(437, 56);
+            this.testBox3.Name = "testBox3";
+            this.testBox3.Size = new System.Drawing.Size(90, 20);
+            this.testBox3.TabIndex = 10;
+            // 
+            // texsBox4
+            // 
+            this.texsBox4.Location = new System.Drawing.Point(245, 12);
+            this.texsBox4.Name = "texsBox4";
+            this.texsBox4.Size = new System.Drawing.Size(186, 20);
+            this.texsBox4.TabIndex = 11;
+            // 
+            // testBox5
+            // 
+            this.testBox5.Location = new System.Drawing.Point(574, 202);
+            this.testBox5.Name = "testBox5";
+            this.testBox5.Size = new System.Drawing.Size(90, 20);
+            this.testBox5.TabIndex = 12;
             // 
             // AllAcesSolitaire
             // 
@@ -221,26 +242,28 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 385);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.testBox5);
+            this.Controls.Add(this.texsBox4);
+            this.Controls.Add(this.testBox3);
+            this.Controls.Add(this.testBox2);
+            this.Controls.Add(this.testBox1);
+            this.Controls.Add(this.testBox0);
             this.Controls.Add(this.btnNewGame);
-            this.Controls.Add(this.pbDiscardPile);
-            this.Controls.Add(this.pbPosition4);
-            this.Controls.Add(this.pbPosition3);
-            this.Controls.Add(this.pbPosition2);
-            this.Controls.Add(this.pbPosition1);
+            this.Controls.Add(this.pbDiscardStack);
+            this.Controls.Add(this.pbStack3);
+            this.Controls.Add(this.pbStack2);
+            this.Controls.Add(this.pbStack1);
+            this.Controls.Add(this.pbStack0);
             this.Controls.Add(this.pbDeck);
             this.Name = "AllAcesSolitaire";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All Aces Solitaire";
             ((System.ComponentModel.ISupportInitialize)(this.pbDeck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPosition1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPosition2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPosition3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPosition4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDiscardPile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStack0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStack1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStack2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStack3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiscardStack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,18 +272,19 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbDeck;
-        private System.Windows.Forms.PictureBox pbPosition1;
-        private System.Windows.Forms.PictureBox pbPosition2;
-        private System.Windows.Forms.PictureBox pbPosition3;
-        private System.Windows.Forms.PictureBox pbPosition4;
-        private System.Windows.Forms.PictureBox pbDiscardPile;
+        private System.Windows.Forms.PictureBox pbStack0;
+        private System.Windows.Forms.PictureBox pbStack1;
+        private System.Windows.Forms.PictureBox pbStack2;
+        private System.Windows.Forms.PictureBox pbStack3;
+        private System.Windows.Forms.PictureBox pbDiscardStack;
         private System.Windows.Forms.ImageList imgListOrderedDeck;
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.ImageList imgListCardBack;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox testBox0;
+        private System.Windows.Forms.TextBox testBox1;
+        private System.Windows.Forms.TextBox testBox2;
+        private System.Windows.Forms.TextBox testBox3;
+        private System.Windows.Forms.TextBox texsBox4;
+        private System.Windows.Forms.TextBox testBox5;
     }
 }
-

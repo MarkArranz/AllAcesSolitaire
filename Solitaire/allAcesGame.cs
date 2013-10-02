@@ -8,26 +8,27 @@ namespace Solitaire
 {
     class allAcesGame
     {
-        public Stack<int> discardPile = new Stack<int>();
-
-        public Stack<int> position1 = new Stack<int>();
-        public Stack<int> position2 = new Stack<int>();
-        public Stack<int> position3 = new Stack<int>();
-        public Stack<int> position4 = new Stack<int>();
-        public List<Stack<int>> positionsList = new List<Stack<int>>();
-
+        public Stack<int> stack0 = new Stack<int>();
+        public Stack<int> stack1 = new Stack<int>();
+        public Stack<int> stack2 = new Stack<int>();
+        public Stack<int> stack3 = new Stack<int>();
+        public Stack<int> discardStack = new Stack<int>();
+        public List<Stack<int>> indexStacksList = new List<Stack<int>>();
+        
         public Stack<int> shuffledDeckIndex = new Stack<int>();
 
         public List<playingCard> playingCardDeck = new List<playingCard>();
-        public string[] suitList = new string[] { "club", "diamond", "heart", "spade" };
+        public string[] suitList = new string[] { "club", "diamond", 
+                                                  "heart", "spade" };
 
         public allAcesGame()
         {
             // Adds each position stacks to positions list.
-            this.positionsList.Add(position1);
-            this.positionsList.Add(position2);
-            this.positionsList.Add(position3);
-            this.positionsList.Add(position4);
+            this.indexStacksList.Add(stack0);
+            this.indexStacksList.Add(stack1);
+            this.indexStacksList.Add(stack2);
+            this.indexStacksList.Add(stack3);
+            this.indexStacksList.Add(discardStack);
 
             /* CREATE DATA MODEL FOR CARD IMAGES IN IMGLIST
              * Create instances of playingCard object with value and suit 
@@ -35,7 +36,7 @@ namespace Solitaire
              */
             for (int i = 0; i < this.suitList.Length; i++)
             {
-                string suit = suitList[i];
+                string suit = this.suitList[i];
                 for (int value = 2; value <= 14; value++)
                 {
                     playingCard card = new playingCard (value, suit);
@@ -50,9 +51,8 @@ namespace Solitaire
              * Clear position index stacks (poition1 through position4),
              * discardPile and shuffledDeck.
              */
-            this.shuffledDeckIndex.Clear();
-            this.discardPile.Clear();
-            foreach (Stack<int> position in this.positionsList)
+            shuffledDeckIndex.Clear();            
+            foreach (Stack<int> position in this.indexStacksList)
                 position.Clear();
 
             /* CREATE ORDERED LIST OF CARD INDICES
@@ -86,18 +86,18 @@ namespace Solitaire
                  * one index onto each position of the four position stacks.
                  */
                 int dealCardIndex;
-                foreach (Stack<int> position in positionsList)
+                for (int i = 0; i < 4; i++)
                 {
-                    dealCardIndex = shuffledDeckIndex.Pop();
-                    position.Push(dealCardIndex);
+                    dealCardIndex = this.shuffledDeckIndex.Pop();
+                    this.indexStacksList[i].Push(dealCardIndex);
                 }
             }
         }
 
-        public void ToDiscard(Stack<int> position)
+        public void MoveCardTo(int startStack, int endStack)
         {
-            int cardIndex = position.Pop();
-            this.discardPile.Push(cardIndex);
+            int cardIndex = this.indexStacksList[startStack].Pop();
+            this.indexStacksList[endStack].Push(cardIndex);
         }
     }
 }

@@ -74,6 +74,7 @@
             this.pbStack0.TabIndex = 1;
             this.pbStack0.TabStop = false;
             this.pbStack0.Click += new System.EventHandler(this.pbStack_Click);
+            this.pbStack0.DoubleClick += new System.EventHandler(this.pbStack_DoubleClick);
             // 
             // pbStack1
             // 
@@ -85,6 +86,7 @@
             this.pbStack1.TabIndex = 2;
             this.pbStack1.TabStop = false;
             this.pbStack1.Click += new System.EventHandler(this.pbStack_Click);
+            this.pbStack1.DoubleClick += new System.EventHandler(this.pbStack_DoubleClick);
             // 
             // pbStack2
             // 
@@ -96,6 +98,7 @@
             this.pbStack2.TabIndex = 3;
             this.pbStack2.TabStop = false;
             this.pbStack2.Click += new System.EventHandler(this.pbStack_Click);
+            this.pbStack2.DoubleClick += new System.EventHandler(this.pbStack_DoubleClick);
             // 
             // pbStack3
             // 
@@ -107,6 +110,7 @@
             this.pbStack3.TabIndex = 4;
             this.pbStack3.TabStop = false;
             this.pbStack3.Click += new System.EventHandler(this.pbStack_Click);
+            this.pbStack3.DoubleClick += new System.EventHandler(this.pbStack_DoubleClick);
             // 
             // pbDiscardStack
             // 

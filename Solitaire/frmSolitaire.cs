@@ -26,25 +26,12 @@ namespace Solitaire
             cardPBStacks.Add(pbStack2);
             cardPBStacks.Add(pbStack3);
             cardPBStacks.Add(pbDiscardStack);
-            
         }
 
         public void ClearCardImages()
         {
             foreach (PictureBox cardStack in cardPBStacks)
                 cardStack.Image = null;            
-        }
-        private void btnNewGame_Click(object sender, EventArgs e)
-        {
-            currentGame.NewGame();
-            
-            /* VIEW
-             * Show game is ready by displaying a "loaded deck" at PictureBox pbDeck,
-             * and clearing images from PictureBoxes for all four positions and 
-             * discardPile.
-             */
-            ClearCardImages();
-            pbDeck.Image = imgListCardBack.Images[0];
         }
 
         public void UpdateTestBoxes()
@@ -94,6 +81,19 @@ namespace Solitaire
             }
         }
 
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            currentGame.NewGame();
+            
+            /* VIEW
+             * Show game is ready by displaying a "loaded deck" at PictureBox pbDeck,
+             * and clearing images from PictureBoxes for all four positions and 
+             * discardPile.
+             */
+            ClearCardImages();
+            pbDeck.Image = imgListCardBack.Images[0];
+        }
+
         private void pbDeck_Click(object sender, EventArgs e)
         {
             currentGame.DealHand();
@@ -129,6 +129,22 @@ namespace Solitaire
         {
             if (moveCardFromStack > -1)
             {
+                currentGame.MoveCardTo(moveCardFromStack, 4);
+                UpdateCardImages();
+                moveCardFromStack = -1;
+            }
+            UpdateTestBoxes();
+        }
+
+        private void pbStack_DoubleClick(object sender, EventArgs e)
+        {
+            PictureBox pbClicked = (PictureBox)sender;
+            int currentStackIndex = cardPBStacks.IndexOf(pbClicked);
+            Stack<int> currentStack = currentGame.indexStacksList[currentStackIndex];
+
+            if (currentStack.Count > 0)
+            {
+                moveCardFromStack = currentStackIndex;
                 currentGame.MoveCardTo(moveCardFromStack, 4);
                 UpdateCardImages();
                 moveCardFromStack = -1;

@@ -321,6 +321,7 @@
             // 
             // panelStack0
             // 
+            this.panelStack0.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelStack0.Controls.Add(this.pbStk0Pos12);
             this.panelStack0.Controls.Add(this.pbStk0Pos11);
             this.panelStack0.Controls.Add(this.pbStk0Pos10);
@@ -497,6 +498,7 @@
             // 
             // panelStack1
             // 
+            this.panelStack1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelStack1.Controls.Add(this.pbStk1Pos12);
             this.panelStack1.Controls.Add(this.pbStk1Pos11);
             this.panelStack1.Controls.Add(this.pbStk1Pos10);
@@ -673,6 +675,7 @@
             // 
             // panelStack2
             // 
+            this.panelStack2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelStack2.Controls.Add(this.pbStk2Pos12);
             this.panelStack2.Controls.Add(this.pbStk2Pos11);
             this.panelStack2.Controls.Add(this.pbStk2Pos10);
@@ -849,6 +852,7 @@
             // 
             // panelStack3
             // 
+            this.panelStack3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelStack3.Controls.Add(this.pbStk3Pos12);
             this.panelStack3.Controls.Add(this.pbStk3Pos11);
             this.panelStack3.Controls.Add(this.pbStk3Pos10);

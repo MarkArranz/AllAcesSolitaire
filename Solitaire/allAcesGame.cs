@@ -24,11 +24,10 @@ namespace Solitaire
         public allAcesGame()
         {
             // Adds each position stacks to positions list.
-            this.indexStacksList.Add(stack0);
-            this.indexStacksList.Add(stack1);
-            this.indexStacksList.Add(stack2);
-            this.indexStacksList.Add(stack3);
-            this.indexStacksList.Add(discardStack);
+            indexStacksList.Add(stack0);
+            indexStacksList.Add(stack1);
+            indexStacksList.Add(stack2);
+            indexStacksList.Add(stack3);
 
             /* CREATE DATA MODEL FOR CARD IMAGES IN IMGLIST
              * Create instances of playingCard object with value and suit 
@@ -51,7 +50,8 @@ namespace Solitaire
              * Clear position index stacks (poition1 through position4),
              * discardPile and shuffledDeck.
              */
-            shuffledDeckIndex.Clear();            
+            shuffledDeckIndex.Clear();
+            discardStack.Clear();
             foreach (Stack<int> position in this.indexStacksList)
                 position.Clear();
 
@@ -71,7 +71,7 @@ namespace Solitaire
             Random rndCardIndex = new Random();            
             for (int i = 0; i < 52; i++)
             {
-                int newCardIndex = rndCardIndex.Next(orderedDeckIndex.Count - 1);
+                int newCardIndex = rndCardIndex.Next(orderedDeckIndex.Count);
                 this.shuffledDeckIndex.Push(orderedDeckIndex[newCardIndex]);
                 orderedDeckIndex.RemoveAt(newCardIndex);
             }
@@ -96,8 +96,36 @@ namespace Solitaire
 
         public void MoveCardTo(int startStack, int endStack)
         {
-            int cardIndex = this.indexStacksList[startStack].Pop();
-            this.indexStacksList[endStack].Push(cardIndex);
+            int cardIndex = indexStacksList[startStack].Pop();
+            indexStacksList[endStack].Push(cardIndex);
+        }
+
+        public void Discard(int selectedStack)
+        {
+            int selectedCardIndex = indexStacksList[selectedStack].Peek();
+            List<playingCard> otherTopCards = new List<playingCard> ();
+            int topCardIndex;
+            foreach (Stack<int> stack in indexStacksList)
+            {
+                if (selectedCardIndex != stack.Peek())
+                {
+                    topCardIndex = stack.Peek();
+                    playingCard otherTopCard = playingCardDeck[topCardIndex];
+                    otherTopCards.Add(otherTopCard);
+                }
+            }
+
+            playingCard selectedTopCard = playingCardDeck[selectedCardIndex];
+            foreach (playingCard card in otherTopCards)
+            {
+                if (card.Suit == selectedTopCard.Suit &&
+                    card.Value > selectedTopCard.Value)
+                {
+                    int discardCardIndex = indexStacksList[selectedStack].Pop();
+                    discardStack.Push(discardCardIndex);
+                    break;
+                }
+            }
         }
     }
 }

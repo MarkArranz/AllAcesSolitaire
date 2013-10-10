@@ -13,7 +13,7 @@ namespace Solitaire
     public partial class AllAcesSolitaire : Form
     {
         allAcesGame currentGame = new allAcesGame();
-        private int moveCardFromStack = -1;
+        private int selectedStack = -1;
         private List<List<PictureBox>> panelStackList = new List<List<PictureBox>> { };
         private List<PictureBox> pbStack0List = new List<PictureBox> { };
         private List<PictureBox> pbStack1List = new List<PictureBox> { };
@@ -114,7 +114,7 @@ namespace Solitaire
                     TestBoxList[i].Text = null;
                 }
             }
-            texsBox4.Text = "Selected Stack: " + moveCardFromStack;
+            texsBox4.Text = "Selected Stack: " + selectedStack;
             testBox5.Text = "Count: " + currentGame.discardStack.Count;
         }
 
@@ -184,11 +184,11 @@ namespace Solitaire
 
         private void pbDiscardPile_Click(object sender, EventArgs e)
         {
-            if (moveCardFromStack > -1)
+            if (selectedStack > -1)
             {
-                currentGame.MoveCardTo(moveCardFromStack, 4);
+                currentGame.Discard(selectedStack);
                 UpdateCardImages();
-                moveCardFromStack = -1;
+                selectedStack = -1;
             }
             UpdateTestBoxes();
         }
@@ -208,15 +208,15 @@ namespace Solitaire
             
             Stack<int> currentStack = currentGame.indexStacksList[currentStackIndex];
 
-            if (moveCardFromStack > -1 && currentStack.Count == 0)
+            if (selectedStack > -1 && currentStack.Count == 0)
             {   
-                currentGame.MoveCardTo(moveCardFromStack, currentStackIndex);
+                currentGame.MoveCardTo(selectedStack, currentStackIndex);
                 UpdateCardImages();
-                moveCardFromStack = -1;
+                selectedStack = -1;
             }
             else if (currentStack.Count > 0)
             {
-                moveCardFromStack = currentStackIndex;
+                selectedStack = currentStackIndex;
             }
             UpdateTestBoxes();
         }
@@ -238,10 +238,9 @@ namespace Solitaire
 
             if (currentStack.Count > 0)
             {
-                moveCardFromStack = currentStackIndex;
-                currentGame.MoveCardTo(moveCardFromStack, 4);
+                currentGame.Discard(currentStackIndex);
                 UpdateCardImages();
-                moveCardFromStack = -1;
+                selectedStack = -1;
             }
             UpdateTestBoxes();
         }

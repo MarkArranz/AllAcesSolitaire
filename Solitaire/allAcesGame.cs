@@ -107,7 +107,7 @@ namespace Solitaire
             int topCardIndex;
             foreach (Stack<int> stack in indexStacksList)
             {
-                if (selectedCardIndex != stack.Peek())
+                if (stack.Count > 0 && selectedCardIndex != stack.Peek())
                 {
                     topCardIndex = stack.Peek();
                     playingCard otherTopCard = playingCardDeck[topCardIndex];

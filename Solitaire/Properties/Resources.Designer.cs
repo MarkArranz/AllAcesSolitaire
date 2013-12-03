@@ -63,6 +63,26 @@ namespace Solitaire.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cardbackBlue {
+            get {
+                object obj = ResourceManager.GetObject("cardbackBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cardbackRed {
+            get {
+                object obj = ResourceManager.GetObject("cardbackRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap club2 {
             get {
                 object obj = ResourceManager.GetObject("club2", resourceCulture);
